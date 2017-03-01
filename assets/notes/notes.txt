@@ -1,0 +1,21 @@
+q1:
+what is the proper syntax for a javascript array 
+a) var listOfNumbers = (123, 342, 435, 4234, "snoodle", "droople")
+b) var listOfNumbers = [123, 5423, 456, "doodle", "poodle"];
+c) function array(123, 4353, 5345, listOfNumbers){console.lego();}
+d) 
+
+
+q2
+
+
+
+
+q3
+q4
+q5
+q6
+q7
+q8
+q9
+q10
