@@ -1,46 +1,94 @@
 var triviaJS = {
+	// object: values inside
 	questions:{
 
-		qOne:{
-			dataOne:"wumbo",
-			dataTwo:"wumtwo",
-			dataThree:"wumThree",
+		questOne:{
+			question:"display question",
+			choices:{
+				a:"a",
+				b:"b",
+				c:"c",
+				d:"d"
+			},
+			custom:"something unique",
 
 		},
-		qTwo:{
+		questTwo:{
 
 		},
-		qThree:{
+		questThree:{
 
 		},
-		qFour:{
+		questFour:{
 
 		},
-		qFive:{
+		questFive:{
 
 		},
-		qSix:{
+		questSix:{
 
 		},
-		qSeven:{
+		questSeven:{
 
 		},
-		qEight:{
+		questEight:{
 
 		},
-		qNine:{
+		questNine:{
 
 		},
-		qTen:{
+		questTen:{
+
+		},
+		modal:{
 
 		}
 	},
 
+		timeValue: 100,
+		
+
+		startTimer: function(){
+			var intervalTime;
+			intervalTime = setInterval(this.decrement, 1000);
+			
+		},
+
+		decrement: function(){	
+			triviaJS.timeValue--;
+			$("#show-time").html("<h2>" + triviaJS.timeValue + "</h2>");
+
+			if(triviaJS.timeValue === 0){
+				stop();
+				console.log("Times up");
+			}
+
+		},
+		stop: function(){
+			clearInterval(intervalTime);
+		},
+
+		startQuiz: function(){
+			// display modal question
+			this.displayModalQuestion
+			// start the timer
+			// once times up rerun
+
+		},
+
+		displayModalQuestion: function(){
+
+		},
 
 
 
 
 
+
+
+
+
+	
 
 
 
@@ -48,3 +96,4 @@ var triviaJS = {
 
 
 }
+triviaJS.startTimer();
