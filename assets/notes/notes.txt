@@ -1,3 +1,15 @@
+sudowoodo
+
+display question
+setInterval
+once times up display another question
+
+setTimer
+run this code every so often
+
+key presses and button presses 1234
+interesting timer diagram
+
 q1:
 what is the proper syntax for a javascript array 
 a) var listOfNumbers = (123, 342, 435, 4234, "snoodle", "droople")
@@ -6,9 +18,14 @@ c) function array(123, 4353, 5345, listOfNumbers){console.lego();}
 d) 
 
 
-q2
 
-
+q2:
+In the following array how would you access the value steel
+var buildingFacade:[[mullion, glazing, customBrakets, {steel:}],[roof, joins, beams],[doors, windows],[steelSkeleton]]
+a) buldingFacade[0]
+b)
+c)
+d)
 
 
 q3
