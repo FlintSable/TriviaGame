@@ -85,15 +85,5 @@ var triviaJS = {
 
 
 
-
-
-
-	
-
-
-
-
-
-
-}
+};
 triviaJS.startTimer();
