@@ -118,20 +118,27 @@ var triviaJS = {
 
 
 
-	modalRender: function(question, ansObj){
+	modalRender: function(question, choices, ans){
 			// creating the divs, have not used them yet
-			console.log("rendering in progress " + ansObj.a);
+			var q = question;
+			var c = choices;
+			var a = ans;
+			console.log(q);
+			console.log(c);
+			console.log(a);
+
+			
 			$ghost = $('<div id="ghost"></div>');
 			$clearLayer = $('<div id="clearLayer"></div>');
 			$qModal = $('<div id="qModal">');
-			$aObj = $('<div id="aObj">');
-			$aItem = $('<button id="aItems" data-value=65>' + ansObj.a + '</button>');
-			$bItem = $('<button id="bItems" data-value=66>' + ansObj.b + '</button>');
-			$cItem = $('<button id="cItems" data-value=67>' + ansObj.c + '</button>');
-			$dItem = $('<button id="dItems" data-value=68>' + ansObj.d + '</button>');
+			$aObj = $('<div id="asObj">');
+			$aItem = $('<button id="aItems" data-value=65>' + c.a + '</button>');
+			$bItem = $('<button id="bItems" data-value=66>' + c.b + '</button>');
+			$cItem = $('<button id="cItems" data-value=67>' + c.c + '</button>');
+			$dItem = $('<button id="dItems" data-value=68>' + c.d + '</button>');
 			$cont1 = $('<div id="cont1">');
 			$cont2 = $('<div id="cont2">');
-			$actualQuestion = $('<div id="actualQuestion loader">' + question + '</div>');
+			$actualQuestion = $('<div id="actualQuestion loader">' + q + '</div>');
 			$loader = $('<div id="loader">Mew</div>')
 
 			$cont1.append($actualQuestion);
@@ -144,24 +151,25 @@ var triviaJS = {
 			$('body').append( $ghost);
 			$("button").on("click", function(){
 				console.log($(this).attr('data-value'));
-				console.log(question);
+				console.log(q);
 
-				if($(this).attr('data-value') == this.ans){
+				if($(this).attr('data-value') == a){
 					console.log('CORRECT');
 				}
 				else{
-					console.log('INCORRECT')
+					console.log('INCORRECT');
 				}
 
 			});
 	},
 		
 
-	startTimer: function(q1, a1){
-
+	startTimer: function(q1){
+				var question = q1.q1;
+				var choices = q1.choices;
+				var ans = q1.ans
 				intervalTime = setInterval(this.decrement, 1000);
-				this.modalRender(q1, a1);
-
+				this.modalRender(question, choices, ans);
 	
 			
 	},
@@ -179,53 +187,53 @@ var triviaJS = {
 
 				switch (triviaJS.questCount){
 					case 0:
-					triviaJS.startTimer(triviaJS.questions.quest1.q1, triviaJS.questions.quest1.choices);
+					triviaJS.startTimer(triviaJS.questions.quest1);
 					console.log('in the sqitch ' + questCount);
 					break;
 
 					case 1:
-					triviaJS.startTimer(triviaJS.questions.quest2.q1, triviaJS.questions.quest2.choices);
+					triviaJS.startTimer(triviaJS.questions.quest2);
 					console.log(questCount);
 					break;
 
 
 					case 2:
-					triviaJS.startTimer(triviaJS.questions.quest3.q1, triviaJS.questions.quest3.choices);
+					triviaJS.startTimer(triviaJS.questions.quest3);
 					console.log(questCount);
 					break;
 
 					case 3:
-					triviaJS.startTimer(triviaJS.questions.quest4.q1, triviaJS.questions.quest4.choices);
+					triviaJS.startTimer(triviaJS.questions.quest4);
 					console.log(questCount);
 					break;
 
 					case 4:
-					triviaJS.startTimer(triviaJS.questions.quest5.q1, triviaJS.questions.quest5.choices);
+					triviaJS.startTimer(triviaJS.questions.quest5);
 					console.log(questCount);
 					break;
 
 					case 5:
-					triviaJS.startTimer(triviaJS.questions.quest6.q1, triviaJS.questions.quest6.choices);
+					triviaJS.startTimer(triviaJS.questions.quest6);
 					console.log(questCount);
 					break;
 
 					case 6:
-					triviaJS.startTimer(triviaJS.questions.quest7.q1, triviaJS.questions.quest7.choices);
+					triviaJS.startTimer(triviaJS.questions.quest7);
 					console.log(questCount);
 					break;
 
 					case 7:
-					triviaJS.startTimer(triviaJS.questions.quest8.q1, triviaJS.questions.quest8.choices);
+					triviaJS.startTimer(triviaJS.questions.quest8);
 					console.log(questCount);
 					break;
 
 					case 8:
-					triviaJS.startTimer(triviaJS.questions.quest9.q1, triviaJS.questions.quest9.choices);
+					triviaJS.startTimer(triviaJS.questions.quest9);
 					console.log(questCount);
 					break;
 
 					case 9:
-					triviaJS.startTimer(triviaJS.questions.quest10.q1, triviaJS.questions.quest10.choices);
+					triviaJS.startTimer(triviaJS.questions.quest10);
 					console.log(questCount);
 					break;
 
@@ -271,7 +279,8 @@ var triviaJS = {
 }
 
 
-triviaJS.startTimer(triviaJS.questions.quest1.q1, triviaJS.questions.quest1.choices);
+triviaJS.startTimer(triviaJS.questions.quest1);
+
 
 window.onload = function(){
 
