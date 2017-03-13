@@ -3,12 +3,17 @@ var triviaJS = {
     questions: {
 
         quest1: {
-            q1: "Dear reader, sorry this is not complete",
+            q1: "What will show in the console?" + "<br><br>" + 
+            "var taxTotal = tax * income" + "<br>" +
+            "var income = 70,000" + "<br>" +
+            "var tax = .10" + "<br>" +
+            "console.log(total)" ,
+
             choices: {
-                a: "the a-",
-                b: "the b",
-                c: "the c",
-                d: "the d"
+                a: "NaN",
+                b: "undefined",
+                c: "7000",
+                d: "hoisting"
             },
             ans: 65
 
@@ -109,6 +114,7 @@ var triviaJS = {
             },
             ans: 65
         }
+
 
     },
 
