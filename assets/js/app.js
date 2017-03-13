@@ -115,6 +115,8 @@ var triviaJS = {
 	timeValue: 7,
 	questionCount: "questOne",
 	questCount: 0,
+	correct: 0,
+	incorrect: 0,
 
 
 
@@ -155,9 +157,26 @@ var triviaJS = {
 
 				if($(this).attr('data-value') == a){
 					console.log('CORRECT');
-				}
+					clearInterval(this.intervalTime);
+					$('#ghost').remove();
+					triviaJS.timeValue = 7;
+					this.correct++;
+					triviaJS.decrement();
+
+					}
+
+
+				
 				else{
 					console.log('INCORRECT');
+					clearInterval(this.intervalTime);
+					$('#ghost').remove();
+					triviaJS.timeValue = 7;
+					this.incorrect++;
+
+					triviaJS.decrement();
+
+
 				}
 
 			});
@@ -238,7 +257,7 @@ var triviaJS = {
 					break;
 
 					case 10:
-					console.log('score!!!s');
+					console.log('score!!!s' + triviaJS.correct );
 					break;
 
 
@@ -252,14 +271,15 @@ var triviaJS = {
 				// function to clear and open new modal
 				clearInterval(this.intervalTime);
 				$('#ghost').remove();
-				triviaJS.timeValue = 5;
+				triviaJS.timeValue = 7;
+
 
 				setTimeout(function(){ 
 					triviaJS.questCount++;
 					console.log('timeout function'+triviaJS.questCount);
 					stateEvaluate(triviaJS.questCount);
 
-				}, 4000);
+				}, 1000);
 
 
 
